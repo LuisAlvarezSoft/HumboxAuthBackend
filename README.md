@@ -1,6 +1,9 @@
 HumboxAuthBackend
+
 Microservicio de Autenticación
+
 Descripción
+
 Backend de autenticación para la plataforma estudiantil Humbox, desarrollado en Laravel. Proporciona sistema de registro y autenticación de usuarios con gestión de roles y estados.
 
 Tecnologías
