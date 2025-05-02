@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Middleware para redirigir usuarios autenticados lejos de rutas públicas.
  * 
- * @author Luis Miguel Álvarez <luismiguel.alvarez@humboldt.edu.co>
+ * @author Luis Miguel Álvarez
  */
 class RedirectIfAuthenticated
 {
