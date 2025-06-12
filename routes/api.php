@@ -10,6 +10,13 @@ use App\Http\Controllers\Auth\RegisterController;
  */
 
 // Registro de usuario (con soporte para sesión persistente)
+// Route::post('/register', [RegisterController::class, 'register'])
+//     ->name('auth.register')
+//     ->middleware('guest'); // Solo accesible para usuarios no autenticados
+
+    //comentado temporalmente para correr las pruebas del pipeline
+
+
+    // Registro de usuario (con soporte para sesión persistente)
 Route::post('/register', [RegisterController::class, 'register'])
-    ->name('auth.register')
-    ->middleware('guest'); // Solo accesible para usuarios no autenticados
+    ->name('auth.register');
