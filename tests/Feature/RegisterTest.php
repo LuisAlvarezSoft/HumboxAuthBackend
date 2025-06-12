@@ -14,7 +14,7 @@ class RegisterTest extends TestCase
     public function it_registers_a_user_successfully()
     {
         $response = $this->postJson('/api/register', [
-            'name' => 'Test User',
+            'username' => 'testuser', // CAMBIADO
             'email' => 'test@example.com',
             'password' => 'password123',
             'password_confirmation' => 'password123',
@@ -23,7 +23,7 @@ class RegisterTest extends TestCase
 
         $response->assertStatus(201)
                  ->assertJsonStructure([
-                     'user' => ['id', 'name', 'email'],
+                     'user' => ['id', 'username', 'email'], // CAMBIADO
                      'token',
                      'remember_token',
                      'message',
@@ -40,7 +40,7 @@ class RegisterTest extends TestCase
         $response = $this->postJson('/api/register', []);
 
         $response->assertStatus(422)
-                 ->assertJsonValidationErrors(['name', 'email', 'password']);
+                 ->assertJsonValidationErrors(['username', 'email', 'password']); // CAMBIADO
     }
 
     /** @test */
@@ -51,7 +51,7 @@ class RegisterTest extends TestCase
         ]);
 
         $response = $this->postJson('/api/register', [
-            'name' => 'Another User',
+            'username' => 'anotheruser', // CAMBIADO
             'email' => 'duplicate@example.com',
             'password' => 'password123',
             'password_confirmation' => 'password123',
